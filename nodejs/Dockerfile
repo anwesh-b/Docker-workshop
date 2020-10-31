@@ -1,11 +1,10 @@
 FROM node:alpine
 
-WORKDIR /src
-
-COPY ./* /src/
-
-EXPOSE 3000
+RUN mkdir /nodeapp
+WORKDIR /nodeapp
+COPY ./* /nodeapp/
 
 RUN npm install
+EXPOSE 3000
 
 CMD ["node","index.js"]
